@@ -13,7 +13,7 @@ use StevenBerg\ResponsibleImages\Values\Name;
 /**
  * Generate URLs for images stored in Cloudinary.
  */
-class Cloudinary implements Maker
+class Cloudinary extends Maker
 {
     /**
      * Return a URL for the given image name and options.

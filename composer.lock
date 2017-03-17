@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c894ca6489f3ebae0fea0d17103eca2",
+    "content-hash": "bf664720dd0394ae492c925dabd96f75",
     "packages": [
         {
             "name": "cloudinary/cloudinary_php",
@@ -107,16 +107,16 @@
         },
         {
             "name": "stevenberg/responsible-images",
-            "version": "0.1.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stevenberg/responsible-images-php.git",
-                "reference": "d25546e185bc5d4e4ecc11e3a81ede21cd876b47"
+                "reference": "e4d48f7bb02d8c7891232d329b5c2f775b073b03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stevenberg/responsible-images-php/zipball/d25546e185bc5d4e4ecc11e3a81ede21cd876b47",
-                "reference": "d25546e185bc5d4e4ecc11e3a81ede21cd876b47",
+                "url": "https://api.github.com/repos/stevenberg/responsible-images-php/zipball/e4d48f7bb02d8c7891232d329b5c2f775b073b03",
+                "reference": "e4d48f7bb02d8c7891232d329b5c2f775b073b03",
                 "shasum": ""
             },
             "require": {
@@ -148,7 +148,7 @@
                 "images",
                 "responsive"
             ],
-            "time": "2017-03-16T20:38:52+00:00"
+            "time": "2017-03-17T01:15:21+00:00"
         }
     ],
     "packages-dev": [
