@@ -18,8 +18,8 @@ class Cloudinary implements Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param \StevenBerg\ResponsibleImages\Values\Name $name The image name.
-     * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the URL maker class.
+     * @param Values\Name $name The image name.
+     * @param Values\Value[] $options Options to pass to the URL maker class.
      *
      * @return string The URL of the resized image.
      */
