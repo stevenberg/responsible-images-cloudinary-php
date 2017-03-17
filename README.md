@@ -1,8 +1,21 @@
 # Cloudinary URL Maker for Responsible Images
 
+Cloudinary URL maker for [stevenberg/responsible-images](https://github.com/stevenberg/responsible-images-php).
+
+## Installation
+
+Install with composer:
+
+```bash
+composer require stevenberg/responsible-images-cloudinary
+```
+
+Make sure the [Cloudinary library](https://github.com/cloudinary/cloudinary_php)
+is configured before you use it.
+
 ## License
 
-Copyright (C) 2017  Steven Berg <steven@stevenberg.net>
+Copyright © 2017 [Steven Berg](mailto:steven@stevenberg.net)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
