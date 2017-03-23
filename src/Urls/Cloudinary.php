@@ -19,10 +19,7 @@ class Cloudinary extends Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param Values\Name $name The image name.
      * @param Values\Value[] $options Options to pass to the URL maker class.
-     *
-     * @return string The URL of the resized image.
      */
     public function make(Name $path, array $options = []): string
     {
