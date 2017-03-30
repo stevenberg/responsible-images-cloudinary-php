@@ -6,7 +6,7 @@
         "images",
         "responsive"
     ],
-    "license": "GPL-3.0",
+    "license": "MIT",
     "support": {
         "issues": "https://github.com/stevenberg/responsible-images-cloudinary-php/issues",
         "source": "https://github.com/stevenberg/responsible-images-cloudinary-php"
