@@ -8,8 +8,11 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Urls;
 
+use Ds\Map;
+use StevenBerg\ResponsibleImages\Values\Crop;
 use StevenBerg\ResponsibleImages\Values\Gravity;
 use StevenBerg\ResponsibleImages\Values\Name;
+use StevenBerg\ResponsibleImages\Values\Value;
 
 /**
  * Generate URLs for images stored in Cloudinary.
@@ -19,29 +22,33 @@ class Cloudinary extends Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param Values\Value[] $options Options to pass to the URL maker class.
+     * @param Ds\Map $options Options to pass to the URL maker class.
      */
-    public function make(Name $path, array $options = []): string
+    protected function url(Name $path, Map $options): string
     {
         if (isset($options['width']) && isset($options['height'])) {
-            $options['crop'] = 'fill';
+            $options['crop'] = Crop::from('fill');
             if (!isset($options['gravity'])) {
-                $options['gravity'] = Gravity::value('auto');
+                $options['gravity'] = Gravity::from('auto');
             }
         } else {
-            $options['crop'] = 'scale';
+            $options['crop'] = Crop::from('scale');
         }
 
-        return cloudinary_url($path, $this->options() + $options);
+        return cloudinary_url($path, $this->options($options));
     }
 
-    private function options()
+    private function options(Map $options): array
     {
-        return [
+        return $options
+            ->map(function ($key, $value) {
+                return $value->value();
+            })
+            ->merge([
             'secure' => true,
             'quality' => 'auto:best',
             'fetch_format' => 'auto',
             'flags' => 'advanced_resize',
-        ];
+        ])->toArray();
     }
 }
