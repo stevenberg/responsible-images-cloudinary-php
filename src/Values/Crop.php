@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 /**
  * @author Steven Berg <steven@stevenberg.net>
  * @copyright 2017 Steven Berg
@@ -8,6 +10,8 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
+use StevenBerg\WholesomeValues\Base;
+
 /**
  * Represents a Cloudinary crop type.
  */
@@ -15,11 +19,6 @@ class Crop extends Base
 {
     const VALUES = ['fill', 'scale'];
 
-    /**
-     * {@inheritDoc}
-     *
-     * A gravity value is valid if it's one of `auto`, `center`.
-     */
     protected static function validate($value): bool
     {
         return is_string($value) && in_array($value, self::VALUES);
@@ -27,6 +26,6 @@ class Crop extends Base
 
     protected static function invalidReason(): string
     {
-        return 'Crop value must be one of ' . implode(', ', self::VALUES);
+        return 'must be one of ' . implode(', ', self::VALUES);
     }
 }

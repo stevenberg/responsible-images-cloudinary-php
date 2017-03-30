@@ -21,7 +21,8 @@
     "require": {
         "php": ">=7.0.0",
         "stevenberg/responsible-images": "0.4.*",
-        "cloudinary/cloudinary_php": "1.7.*"
+        "cloudinary/cloudinary_php": "1.7.*",
+        "stevenberg/wholesome-values": "^0.1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "6.0.*"
