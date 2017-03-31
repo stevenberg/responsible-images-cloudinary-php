@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "stevenberg/responsible-images": "0.4.*",
+        "stevenberg/responsible-images": "0.5.*",
         "cloudinary/cloudinary_php": "1.7.*",
         "stevenberg/wholesome-values": "^0.1.1"
     },
