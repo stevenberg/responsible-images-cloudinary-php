@@ -22,11 +22,11 @@ class Cloudinary extends Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param Ds\Map $options Options to pass to the URL maker class.
+     * @param Ds\Map $options options to pass to the URL maker class
      */
     protected function url(Name $path, Map $options): string
     {
-        if (isset($options['width']) && isset($options['height'])) {
+        if (isset($options['width'], $options['height'])) {
             $options['crop'] = Crop::from('fill');
             if (!isset($options['gravity'])) {
                 $options['gravity'] = Gravity::from('auto');
