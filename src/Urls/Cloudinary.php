@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @author Steven Berg <steven@stevenberg.net>
@@ -12,7 +13,6 @@ use Ds\Map;
 use StevenBerg\ResponsibleImages\Values\Crop;
 use StevenBerg\ResponsibleImages\Values\Gravity;
 use StevenBerg\ResponsibleImages\Values\Name;
-use StevenBerg\ResponsibleImages\Values\Value;
 
 /**
  * Generate URLs for images stored in Cloudinary.
@@ -40,11 +40,12 @@ class Cloudinary extends Maker
 
     private function options(Map $options): array
     {
-        return $options
-            ->map(function ($key, $value) {
-                return $value->value();
-            })
-            ->merge([
+        $options = $options->copy();
+        $options->apply(function ($key, $value) {
+            return $value->value();
+        });
+
+        return $options->merge([
             'secure' => true,
             'quality' => 'auto:best',
             'fetch_format' => 'auto',
