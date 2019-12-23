@@ -1,43 +1,46 @@
 {
-    "name": "stevenberg/responsible-images-cloudinary",
-    "type": "library",
-    "description": "Cloudinary URL maker for stevenberg/responsible-images",
-    "keywords": [
-        "images",
-        "responsive"
-    ],
-    "license": "MIT",
-    "support": {
-        "issues": "https://github.com/stevenberg/responsible-images-cloudinary-php/issues",
-        "source": "https://github.com/stevenberg/responsible-images-cloudinary-php"
-    },
-    "authors": [
-        {
-            "name": "Steven Berg",
-            "email": "steven@stevenberg.net",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": ">=7.1.0",
-        "stevenberg/responsible-images": "^2.0",
-        "cloudinary/cloudinary_php": "^1.8",
-        "stevenberg/wholesome-values": "^1.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "7.0"
-    },
-    "archive": {
-        "exclude": ["/tests"]
-    },
-    "autoload": {
-        "psr-4": {
-            "StevenBerg\\ResponsibleImages\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "StevenBerg\\ResponsibleImages\\Tests\\": "tests/"
-        }
+  "name": "stevenberg/responsible-images-cloudinary",
+  "type": "library",
+  "description": "Cloudinary URL maker for stevenberg/responsible-images",
+  "keywords": [
+    "images",
+    "responsive"
+  ],
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/stevenberg/responsible-images-cloudinary-php/issues",
+    "source": "https://github.com/stevenberg/responsible-images-cloudinary-php"
+  },
+  "authors": [
+    {
+      "name": "Steven Berg",
+      "email": "steven@stevenberg.net",
+      "role": "Developer"
     }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "cloudinary/cloudinary_php": "^1.8",
+    "stevenberg/responsible-images": "^2.0",
+    "stevenberg/wholesome-values": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "StevenBerg\\ResponsibleImages\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "StevenBerg\\ResponsibleImages\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "archive": {
+    "exclude": ["/tests"]
+  }
 }
