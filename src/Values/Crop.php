@@ -10,22 +10,13 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use StevenBerg\WholesomeValues\Base;
+use MyCLabs\Enum\Enum;
 
 /**
  * Represents a Cloudinary crop type.
  */
-class Crop extends Base
+class Crop extends Enum
 {
-    const VALUES = ['fill', 'scale'];
-
-    protected static function validate($value): bool
-    {
-        return is_string($value) && in_array($value, self::VALUES);
-    }
-
-    protected static function invalidReason(): string
-    {
-        return 'must be one of ' . implode(', ', self::VALUES);
-    }
+    private const Fill = 'fill';
+    private const Scale = 'scale';
 }

@@ -10,20 +10,36 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use StevenBerg\WholesomeValues\Base;
+use TypeError;
 
 /**
- * Represents an image name.
+ * Represents an image version.
  */
-class Version extends Base
+class Version
 {
-    protected static function validate($value): bool
+    private $value;
+
+    public function __construct(string $value)
     {
-        return is_string($value) && is_numeric($value);
+        if (!is_numeric($value)) {
+            throw new TypeError('Argument 1 passed to StevenBerg\ResponsibleImages\Values\Version::__construct must be numeric');
+        }
+
+        $this->value = $value;
     }
 
-    protected static function invalidReason(): string
+    public function __toString(): string
     {
-        return 'must be a numeric string';
+        return $this->value;
+    }
+
+    public static function from(string $value): self
+    {
+        return new self($value);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
     }
 }

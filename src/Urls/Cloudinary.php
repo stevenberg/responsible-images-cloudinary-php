@@ -12,7 +12,6 @@ namespace StevenBerg\ResponsibleImages\Urls;
 use Ds\Map;
 use StevenBerg\ResponsibleImages\Values\Crop;
 use StevenBerg\ResponsibleImages\Values\Gravity;
-use StevenBerg\ResponsibleImages\Values\Name;
 
 /**
  * Generate URLs for images stored in Cloudinary.
@@ -24,15 +23,15 @@ class Cloudinary extends Maker
      *
      * @param Ds\Map $options options to pass to the URL maker class
      */
-    protected function url(Name $path, Map $options): string
+    protected function url(string $path, Map $options): string
     {
         if (isset($options['width'], $options['height'])) {
-            $options['crop'] = Crop::from('fill');
+            $options['crop'] = Crop::Fill();
             if (!isset($options['gravity'])) {
-                $options['gravity'] = Gravity::from('auto');
+                $options['gravity'] = Gravity::Auto();
             }
         } else {
-            $options['crop'] = Crop::from('scale');
+            $options['crop'] = Crop::Scale();
         }
 
         return cloudinary_url($path, $this->options($options));
@@ -42,7 +41,7 @@ class Cloudinary extends Maker
     {
         $options = $options->copy();
         $options->apply(function ($key, $value) {
-            return $value->value();
+            return $value->getValue();
         });
 
         return $options->merge([

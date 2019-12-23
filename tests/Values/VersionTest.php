@@ -12,22 +12,22 @@ namespace StevenBerg\ResponsibleImages\Tests\Values;
 
 use PHPUnit\Framework\TestCase;
 use StevenBerg\ResponsibleImages\Values\Version;
-use StevenBerg\WholesomeValues\ExceptionalValue;
+use TypeError;
 
 class VersionTest extends TestCase
 {
     public function testNonStringValue()
     {
-        $version = Version::from(1);
+        $this->expectException(TypeError::class);
 
-        $this->assertInstanceOf(ExceptionalValue::class, $version);
+        $version = Version::from(1);
     }
 
     public function testEmptyStringValue()
     {
-        $version = Version::from('');
+        $this->expectException(TypeError::class);
 
-        $this->assertInstanceOf(ExceptionalValue::class, $version);
+        $version = Version::from('');
     }
 
     public function testInvalidStringValues()
@@ -42,9 +42,9 @@ class VersionTest extends TestCase
         ];
 
         foreach ($values as $value) {
-            $version = Version::from($value);
+            $this->expectException(TypeError::class);
 
-            $this->assertInstanceOf(ExceptionalValue::class, $version);
+            $version = Version::from($value);
         }
     }
 
@@ -62,12 +62,5 @@ class VersionTest extends TestCase
 
             $this->assertEquals($value, (string) $version);
         }
-    }
-
-    public function testFromVersion()
-    {
-        $version = Version::from('123');
-
-        $this->assertEquals($version, Version::from($version));
     }
 }

@@ -7,18 +7,17 @@ namespace StevenBerg\ResponsibleImages\Tests\Urls;
 use Ds\Map;
 use PHPUnit\Framework\TestCase;
 use StevenBerg\ResponsibleImages\Urls\Cloudinary;
-use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Gravity;
 use StevenBerg\ResponsibleImages\Values\Size;
 use StevenBerg\ResponsibleImages\Values\Version;
 
 class CloudinaryTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         putenv('CLOUDINARY_URL=cloudinary://test_key:test_secret@test_name');
-        $this->name = Name::from('test.jpg');
-        $this->maker = new Cloudinary;
+        $this->name = 'test.jpg';
+        $this->maker = new Cloudinary();
     }
 
     public function testScale()
@@ -41,7 +40,7 @@ class CloudinaryTest extends TestCase
                 new Map([
                     'width' => Size::from(100),
                     'height' => Size::from(100),
-                    'gravity' => Gravity::from('auto'),
+                    'gravity' => Gravity::Auto(),
                 ])
             )
         );
