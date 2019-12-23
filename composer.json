@@ -19,13 +19,15 @@
     }
   ],
   "require": {
-    "php": ">=7.1.0",
+    "php": "^7.1",
     "cloudinary/cloudinary_php": "^1.8",
     "stevenberg/responsible-images": "^2.0",
     "stevenberg/wholesome-values": "^1.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "7.0"
+    "friendsofphp/php-cs-fixer": "^2.16",
+    "phpunit/phpunit": "^8.5",
+    "psy/psysh": "^0.9.12"
   },
   "autoload": {
     "psr-4": {
