@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Urls;
 
+use Cloudinary\Asset\Media;
 use Ds\Map;
 use StevenBerg\ResponsibleImages\Values\Crop;
 use StevenBerg\ResponsibleImages\Values\Gravity;
@@ -34,7 +35,7 @@ class Cloudinary extends Maker
             $options['crop'] = Crop::Scale();
         }
 
-        return cloudinary_url($path, $this->options($options));
+        return (string) Media::fromParams($path, $this->options($options));
     }
 
     private function options(Map $options): array
