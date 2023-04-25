@@ -40,7 +40,7 @@ class CloudinaryTest extends TestCase
                 new Map([
                     'width' => Size::from(100),
                     'height' => Size::from(100),
-                    'gravity' => Gravity::Auto(),
+                    'gravity' => Gravity::Auto,
                 ])
             )
         );

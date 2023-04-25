@@ -10,13 +10,17 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use MyCLabs\Enum\Enum;
-
 /**
  * Represents a Cloudinary crop type.
  */
-class Crop extends Enum
+enum Crop: string implements Value
 {
-    private const Fill = 'fill';
-    private const Scale = 'scale';
+    case Fill = 'fill';
+
+    case Scale = 'scale';
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
 }

@@ -28,12 +28,12 @@ class Cloudinary extends Maker
     protected function url(string $path, Map $options): string
     {
         if (isset($options['width'], $options['height'])) {
-            $options['crop'] = Crop::Fill();
+            $options['crop'] = Crop::Fill;
             if (!isset($options['gravity'])) {
-                $options['gravity'] = Gravity::Auto();
+                $options['gravity'] = Gravity::Auto;
             }
         } else {
-            $options['crop'] = Crop::Scale();
+            $options['crop'] = Crop::Scale;
         }
 
         return (string) Media::fromParams($path, $this->options($options));
