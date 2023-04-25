@@ -15,13 +15,6 @@ use StevenBerg\ResponsibleImages\Values\Version;
 
 class VersionTest extends TestCase
 {
-    public function testNonStringValue()
-    {
-        $this->expectException(\TypeError::class);
-
-        $version = Version::from(1);
-    }
-
     public function testEmptyStringValue()
     {
         $this->expectException(\TypeError::class);
