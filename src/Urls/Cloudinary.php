@@ -23,7 +23,7 @@ class Cloudinary extends Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param Ds\Map $options options to pass to the URL maker class
+     * @param Map $options options to pass to the URL maker class
      */
     protected function url(string $path, Map $options): string
     {
