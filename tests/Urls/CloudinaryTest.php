@@ -13,6 +13,9 @@ use StevenBerg\ResponsibleImages\Values\Version;
 
 class CloudinaryTest extends TestCase
 {
+    protected string $name;
+    protected Cloudinary $maker;
+
     protected function setUp(): void
     {
         putenv('CLOUDINARY_URL=cloudinary://test_key:test_secret@test_name');
