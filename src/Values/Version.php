@@ -10,8 +10,6 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use TypeError;
-
 /**
  * Represents an image version.
  */
@@ -22,7 +20,7 @@ class Version
     public function __construct(string $value)
     {
         if (!is_numeric($value)) {
-            throw new TypeError('Argument 1 passed to StevenBerg\ResponsibleImages\Values\Version::__construct must be numeric');
+            throw new \TypeError('Argument 1 passed to StevenBerg\ResponsibleImages\Values\Version::__construct must be numeric');
         }
 
         $this->value = $value;

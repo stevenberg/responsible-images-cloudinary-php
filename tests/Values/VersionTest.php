@@ -12,20 +12,19 @@ namespace StevenBerg\ResponsibleImages\Tests\Values;
 
 use PHPUnit\Framework\TestCase;
 use StevenBerg\ResponsibleImages\Values\Version;
-use TypeError;
 
 class VersionTest extends TestCase
 {
     public function testNonStringValue()
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $version = Version::from(1);
     }
 
     public function testEmptyStringValue()
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $version = Version::from('');
     }
@@ -42,7 +41,7 @@ class VersionTest extends TestCase
         ];
 
         foreach ($values as $value) {
-            $this->expectException(TypeError::class);
+            $this->expectException(\TypeError::class);
 
             $version = Version::from($value);
         }
