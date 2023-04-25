@@ -15,14 +15,14 @@ use StevenBerg\ResponsibleImages\Values\Version;
 
 class VersionTest extends TestCase
 {
-    public function testEmptyStringValue()
+    public function testEmptyStringValue(): void
     {
         $this->expectException(\TypeError::class);
 
         $version = Version::from('');
     }
 
-    public function testInvalidStringValues()
+    public function testInvalidStringValues(): void
     {
         $values = [
             'a',
@@ -40,7 +40,7 @@ class VersionTest extends TestCase
         }
     }
 
-    public function testValidStringValues()
+    public function testValidStringValues(): void
     {
         $values = [
             '1',

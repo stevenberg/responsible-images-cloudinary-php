@@ -23,7 +23,7 @@ class CloudinaryTest extends TestCase
         $this->maker = new Cloudinary();
     }
 
-    public function testScale()
+    public function testScale(): void
     {
         $this->assertEquals(
             'https://res.cloudinary.com/test_name/image/upload/c_scale,f_auto,fl_advanced_resize,q_auto:best,w_100/test.jpg',
@@ -34,7 +34,7 @@ class CloudinaryTest extends TestCase
         );
     }
 
-    public function testFill()
+    public function testFill(): void
     {
         $this->assertEquals(
             'https://res.cloudinary.com/test_name/image/upload/c_fill,f_auto,fl_advanced_resize,g_auto,h_100,q_auto:best,w_100/test.jpg',
@@ -49,7 +49,7 @@ class CloudinaryTest extends TestCase
         );
     }
 
-    public function testVersion()
+    public function testVersion(): void
     {
         $this->assertEquals(
             'https://res.cloudinary.com/test_name/image/upload/c_scale,f_auto,fl_advanced_resize,q_auto:best,w_100/v123/test.jpg',

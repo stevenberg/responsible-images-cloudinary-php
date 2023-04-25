@@ -15,15 +15,11 @@ namespace StevenBerg\ResponsibleImages\Values;
  */
 class Version
 {
-    private $value;
-
-    public function __construct(string $value)
+    public function __construct(private string $value)
     {
         if (!is_numeric($value)) {
             throw new \TypeError('Argument 1 passed to StevenBerg\ResponsibleImages\Values\Version::__construct must be numeric');
         }
-
-        $this->value = $value;
     }
 
     public function __toString(): string
