@@ -23,7 +23,7 @@ class Cloudinary extends Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param Map<string, mixed> $options options to pass to the URL maker class
+     * @param  Map<string, mixed>  $options  options to pass to the URL maker class
      */
     protected function url(string $path, Map $options): string
     {
@@ -40,8 +40,7 @@ class Cloudinary extends Maker
     }
 
     /**
-     * @param Map<string, mixed> $options
-     *
+     * @param  Map<string, mixed>  $options
      * @return array<string, bool|string>
      * */
     private function options(Map $options): array

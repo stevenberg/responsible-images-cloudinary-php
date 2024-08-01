@@ -29,8 +29,8 @@ class CloudinaryTest extends TestCase
             'https://res.cloudinary.com/test_name/image/upload/c_scale,f_auto,fl_advanced_resize,q_auto:best,w_100/test.jpg',
             $this->maker->make(
                 $this->name,
-                new Map(['width' => Size::from(100)])
-            )
+                new Map(['width' => Size::from(100)]),
+            ),
         );
     }
 
@@ -44,8 +44,8 @@ class CloudinaryTest extends TestCase
                     'width' => Size::from(100),
                     'height' => Size::from(100),
                     'gravity' => Gravity::Auto,
-                ])
-            )
+                ]),
+            ),
         );
     }
 
@@ -58,8 +58,8 @@ class CloudinaryTest extends TestCase
                 new Map([
                     'width' => Size::from(100),
                     'version' => Version::from('123'),
-                ])
-            )
+                ]),
+            ),
         );
     }
 }
