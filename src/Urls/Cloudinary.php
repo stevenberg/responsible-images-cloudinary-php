@@ -14,6 +14,7 @@ use Cloudinary\Asset\Media;
 use Ds\Map;
 use StevenBerg\ResponsibleImages\Values\Crop;
 use StevenBerg\ResponsibleImages\Values\Gravity;
+use StevenBerg\ResponsibleImages\Values\Value;
 
 /**
  * Generate URLs for images stored in Cloudinary.
@@ -23,7 +24,7 @@ class Cloudinary extends Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param  Map<string, mixed>  $options  options to pass to the URL maker class
+     * @param  Map<string, ResponsibleImagesOptionType>  $options  options to pass to the URL maker class
      */
     protected function url(string $path, Map $options): string
     {
@@ -40,21 +41,24 @@ class Cloudinary extends Maker
     }
 
     /**
-     * @param  Map<string, mixed>  $options
+     * @param  Map<string, ResponsibleImagesOptionType>  $options
      * @return array<string, bool|string>
      * */
     private function options(Map $options): array
     {
-        $options = $options->copy();
-        $options->apply(function ($key, $value) {
-            return $value->getValue();
-        });
+        $result = [];
+        foreach ($options as $key => $value) {
+            if (is_object($value) && is_a($value, Value::class)) {
+                $value = $value->getValue();
+            }
+            $result[$key] = strval($value);
+        }
 
-        return $options->merge([
-            'secure' => true,
-            'quality' => 'auto:best',
-            'fetch_format' => 'auto',
-            'flags' => 'advanced_resize',
-        ])->toArray();
+        $result['secure'] = true;
+        $result['quality'] = 'auto:best';
+        $result['fetch_format'] = 'auto';
+        $result['flags'] = 'advanced_resize';
+
+        return $result;
     }
 }
