@@ -52,7 +52,7 @@ class VersionTest extends TestCase
         foreach ($values as $value) {
             $version = Version::from($value);
 
-            self::assertEquals($value, (string) $version);
+            self::assertSame($value, (string) $version);
         }
     }
 }

@@ -27,7 +27,7 @@ class CloudinaryTest extends TestCase
     {
         /** @var Map<string, ResponsibleImagesOptionType> */
         $options = new Map(['width' => Size::from(100)]);
-        self::assertEquals(
+        self::assertSame(
             'https://res.cloudinary.com/test_name/image/upload/c_scale,f_auto,fl_advanced_resize,q_auto:best,w_100/test.jpg',
             $this->maker->make(
                 $this->name,
@@ -44,7 +44,7 @@ class CloudinaryTest extends TestCase
             'height' => Size::from(100),
             'gravity' => Gravity::Auto,
         ]);
-        self::assertEquals(
+        self::assertSame(
             'https://res.cloudinary.com/test_name/image/upload/c_fill,f_auto,fl_advanced_resize,g_auto,h_100,q_auto:best,w_100/test.jpg',
             $this->maker->make(
                 $this->name,
@@ -60,7 +60,7 @@ class CloudinaryTest extends TestCase
             'width' => Size::from(100),
             'version' => Version::from('123'),
         ]);
-        self::assertEquals(
+        self::assertSame(
             'https://res.cloudinary.com/test_name/image/upload/c_scale,f_auto,fl_advanced_resize,q_auto:best,w_100/v123/test.jpg',
             $this->maker->make(
                 $this->name,
